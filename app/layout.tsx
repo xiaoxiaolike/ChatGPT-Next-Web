@@ -8,7 +8,8 @@ const buildConfig = getBuildConfig();
 
 export const metadata = {
   title: "Chat with like",
-  description: "Your personal ChatGPT Chat Bot.",
+  description: "My personal ChatGPT Chat Bot.
+",
   viewport: {
     width: "device-width",
     initialScale: 1,
