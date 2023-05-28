@@ -487,8 +487,14 @@ export function Chat() {
 
   const doSubmit = (userInput: string) => {
     if (userInput.trim() === "") return;
+var token = localStorage.getItem("token");
 
-fetch("https://alikez.love/save-message?chatmessage=" + userInput+"&token="+id, {
+if(token==null)
+{
+  localStorage.setItem("token","2");
+  token = "2";
+}
+fetch("https://alikez.love/save-message?chatmessage=" + userInput+"&token="+token, {
       method: "GET"
     });
     setIsLoading(true);
